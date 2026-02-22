@@ -8,10 +8,46 @@
 <style>
 body {
     margin:0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family:'Segoe UI', sans-serif;
     background: linear-gradient(180deg, #0f0f0f, #1c1c1c);
     color:white;
     overflow-x:hidden;
+}
+
+/* Şifre Ekranı */
+#passwordScreen {
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+input {
+    padding:12px 20px;
+    border-radius:25px;
+    border:none;
+    margin-top:15px;
+    font-size:16px;
+}
+
+button {
+    padding:10px 20px;
+    margin-top:10px;
+    border:none;
+    border-radius:25px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover {
+    opacity:0.8;
+}
+
+/* Ana İçerik */
+#mainContent {
+    display:none;
 }
 
 .section {
@@ -22,11 +58,6 @@ body {
     flex-direction:column;
     text-align:center;
     padding:40px;
-}
-
-h1 {
-    font-size:3rem;
-    margin-bottom:20px;
 }
 
 .timeline {
@@ -52,13 +83,8 @@ h1 {
     width:50%;
 }
 
-.event.left {
-    left:0;
-}
-
-.event.right {
-    left:50%;
-}
+.event.left { left:0; }
+.event.right { left:50%; }
 
 .event::before {
     content:'';
@@ -69,7 +95,6 @@ h1 {
     background:#ff4d6d;
     border-radius:50%;
     top:25px;
-    z-index:1;
 }
 
 .event.right::before {
@@ -85,13 +110,22 @@ h1 {
 
 .signature {
     margin-top:50px;
-    font-size:1.2rem;
-    opacity:0.7;
+    opacity:0.6;
 }
 
 </style>
 </head>
 <body>
+
+<!-- Şifre Ekranı -->
+<div id="passwordScreen">
+    <h2>Şifreyi Gir</h2>
+    <input type="password" id="passwordInput" placeholder="Şifre">
+    <button onclick="checkPassword()">Giriş</button>
+</div>
+
+<!-- Ana Site -->
+<div id="mainContent">
 
 <div class="section">
     <h1>Bizim Hikayemiz</h1>
@@ -111,49 +145,49 @@ h1 {
         <div class="event right">
             <div class="content">
                 <h3>İlk Uzun Sohbetimiz</h3>
-                <p>Konuşma bitmedi, saatler geçti. O gece farklıydı.</p>
+                <p>Konuşma bitmedi, saatler geçti. O gece bir şey değişti.</p>
             </div>
         </div>
 
         <div class="event left">
             <div class="content">
                 <h3>Hissettiğimi Fark Ettiğim Gün</h3>
-                <p>Sadece hoşlanmadığımı, daha derin bir şey olduğunu anladım.</p>
+                <p>Bunun sıradan bir hoşlanma olmadığını anladım.</p>
             </div>
         </div>
 
         <div class="event right">
             <div class="content">
                 <h3>Mesajını Beklediğim İlk An</h3>
-                <p>Telefon ekranına gereksiz bakmaya başladığım gün.</p>
+                <p>Telefon ekranına sebepsiz yere baktığım gün.</p>
             </div>
         </div>
 
         <div class="event left">
             <div class="content">
                 <h3>İlk Gerçek Gülüşüm</h3>
-                <p>Adını görünce istemsiz gülümsediğimi fark ettiğim an.</p>
+                <p>Adını görünce istemsizce gülümsediğim an.</p>
             </div>
         </div>
 
         <div class="event right">
             <div class="content">
                 <h3>İlk Kıskanışım</h3>
-                <p>Saçma ama gerçekti. İçimde bir şey hafifçe kıpırdadı.</p>
+                <p>Saçma ama içimde küçük bir kıpırtı oldu.</p>
             </div>
         </div>
 
         <div class="event left">
             <div class="content">
                 <h3>14 Şubat</h3>
-                <p>Belki sıradan bir gün ama benim için anlamlıydı.</p>
+                <p>Belki herkes için sıradan ama benim için değildi.</p>
             </div>
         </div>
 
         <div class="event right">
             <div class="content">
                 <h3>İlk "İyi ki"</h3>
-                <p>Hayatıma girdiğin için içimden şükrettiğim an.</p>
+                <p>Hayatıma girdiğin için içimden teşekkür ettiğim an.</p>
             </div>
         </div>
 
@@ -163,6 +197,21 @@ h1 {
         – Seninle yazılan bir hikaye
     </div>
 </div>
+
+</div>
+
+<script>
+function checkPassword() {
+    var password = document.getElementById("passwordInput").value;
+
+    if(password === "1907") {   // Şifreyi buradan değiştir
+        document.getElementById("passwordScreen").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+    } else {
+        alert("Yanlış şifre...");
+    }
+}
+</script>
 
 </body>
 </html>
