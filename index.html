@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belinay 🌿</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+background:#0c0f0d;
+color:#f1f1f1;
+font-family:'Poppins',sans-serif;
+overflow-x:hidden;
+}
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:80px 20px;
+text-align:center;
+opacity:0;
+transform:translateY(40px);
+transition:1s ease;
+}
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+h1,h2{
+font-family:'Playfair Display',serif;
+margin-bottom:20px;
+letter-spacing:1px;
+}
+button{
+padding:12px 30px;
+border-radius:30px;
+border:1px solid #4b6b52;
+background:transparent;
+color:#d7c2a5;
+cursor:pointer;
+transition:.3s;
+}
+button:hover{
+background:#4b6b52;
+color:#fff;
+}
+.card{
+background:rgba(40,55,45,0.4);
+border:1px solid rgba(255,255,255,0.1);
+padding:30px;
+border-radius:20px;
+max-width:700px;
+backdrop-filter:blur(10px);
+box-shadow:0 0 40px rgba(75,107,82,0.2);
+}
+input{
+padding:12px;
+border-radius:20px;
+border:none;
+text-align:center;
+background:#1b221f;
+color:#fff;
+}
+.hidden{display:none}
+
+#countdown{
+display:flex;
+gap:25px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+.time-box{
+background:#1b221f;
+padding:20px;
+border-radius:15px;
+width:110px;
+border:1px solid #4b6b52;
+}
+.timeline{
+max-width:800px;
+margin-top:40px;
+}
+.timeline-item{
+margin:25px 0;
+padding:25px;
+background:#141816;
+border-left:4px solid #4b6b52;
+border-radius:10px;
+text-align:left;
+}
+.gallery{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:30px;
+}
+.placeholder{
+width:220px;
+height:220px;
+border:1px solid #4b6b52;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:15px;
+color:#aaa;
+background:#141816;
+}
+iframe{
+margin-top:20px;
+border-radius:15px;
+}
+.glow{
+position:fixed;
+width:400px;
+height:400px;
+background:radial-gradient(circle,#4b6b52 0%,transparent 70%);
+opacity:0.15;
+top:-100px;
+right:-100px;
+pointer-events:none;
+}
+@media(max-width:768px){
+#countdown{gap:15px}
+.time-box{width:90px}
+}
+</style>
+</head>
+<body>
+
+<div class="glow"></div>
+
+<section id="lock" class="show">
+<h1>🔐 Özel Alan</h1>
+<p>Kalbimin anahtarını gir</p>
+<input type="password" id="password" maxlength="4">
+<br><br>
+<button onclick="checkPassword()">Aç</button>
+</section>
+
+<div id="main" class="hidden">
+
+<section>
+<h1>Hoş Geldin Balım 🌿</h1>
+<div class="card">
+Bu site gösteriş için değil.  
+Sana olan hislerimin sade ama gerçek bir yansıması.
+</div>
+<br>
+<button onclick="scrollToSection('time')">Devam Et</button>
+</section>
+
+<section id="time">
+<h2>Seninle Geçen Zaman ⏳</h2>
+<div id="countdown">
+<div class="time-box"><h2 id="days">0</h2><p>Gün</p></div>
+<div class="time-box"><h2 id="hours">0</h2><p>Saat</p></div>
+<div class="time-box"><h2 id="minutes">0</h2><p>Dakika</p></div>
+<div class="time-box"><h2 id="seconds">0</h2><p>Saniye</p></div>
+</div>
+<p style="margin-top:20px;color:#c2a98b">
+Tanışma: 31 Aralık 2025  
+<br>Biz Olduğumuz Gün: 14 Şubat 2026
+</p>
+</section>
+
+<section>
+<h2>Hikayemiz 📖</h2>
+<div class="timeline">
+<div class="timeline-item">
+<b>31 Aralık 2025</b><br>
+Yılın son gecesi, belki de hayatımın yeni başlangıcı oldu.
+</div>
+<div class="timeline-item">
+<b>Sana Karşı Hissettiğimi Fark Ettiğim Gün</b><br>
+Mesajını beklerken heyecanlandığımı fark ettiğim an…
+</div>
+<div class="timeline-item">
+<b>14 Şubat 2026</b><br>
+O gün sadece bir tarih değil, bir karar oldu.
+</div>
+<div class="timeline-item">
+<b>İlk Kıskanışım</b><br>
+Seni kaybetme ihtimali bile içimi titretti.
+</div>
+</div>
+</section>
+
+<section>
+<h2>Bir Gün Dolduracağız 📸</h2>
+<div class="gallery">
+<div class="placeholder">Birlikte Gülüşümüz</div>
+<div class="placeholder">Aynı Kare</div>
+<div class="placeholder">Gerçek Bir Sarılma</div>
+</div>
+<p style="margin-top:20px;color:#aaa">
+Belki bugün değil… Ama bir gün burası gerçek anılarla dolacak.
+</p>
+</section>
+
+<section>
+<h2>Gelecek Hayallerim 🌍</h2>
+<div class="card">
+Bir gün aynı evde sabah uyanmak.  
+Aynı mutfakta kahve yapmak.  
+Aynı koltukta film izlemek.  
+Gerçek bir sarılmanın sıcaklığını hissetmek.
+</div>
+</section>
+
+<section>
+<h2>🎵 Bizim Şarkımız</h2>
+<iframe width="350" height="200"
+src="https://www.youtube.com/embed/1k3v8Y5sF1Y"
+allowfullscreen></iframe>
+</section>
+
+<section>
+<button onclick="showSurprise()">Buna Tıklama 🙃</button>
+<p id="surprise" class="hidden" style="margin-top:20px;color:#c2a98b">
+Ne olursa olsun, seni tanıdığım o geceye hep şükredeceğim.
+</p>
+</section>
+
+</div>
+
+<script>
+function checkPassword(){
+if(document.getElementById("password").value==="1013"){
+document.getElementById("lock").style.display="none";
+document.getElementById("main").classList.remove("hidden");
+document.querySelectorAll("#main section").forEach(sec=>sec.classList.add("show"));
+}else{alert("Yanlış şifre");}
+}
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+const startDate=new Date("2025-12-31T00:00:00").getTime();
+setInterval(()=>{
+const now=new Date().getTime();
+const diff=now-startDate;
+document.getElementById("days").innerText=Math.floor(diff/(1000*60*60*24));
+document.getElementById("hours").innerText=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+document.getElementById("minutes").innerText=Math.floor((diff%(1000*60*60))/(1000*60));
+document.getElementById("seconds").innerText=Math.floor((diff%(1000*60))/1000);
+},1000);
+function showSurprise(){
+document.getElementById("surprise").classList.toggle("hidden");
+}
+</script>
+
+</body>
+</html>
