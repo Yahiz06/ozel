@@ -1,223 +1,66 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biz</title>
-
-<style>
-body{
-margin:0;
-font-family:'Segoe UI',sans-serif;
-background:linear-gradient(180deg,#0f0f0f,#1a1a1a);
-color:white;
-overflow-x:hidden;
-}
-
-/* Şifre Ekranı */
-#passwordScreen{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-}
-
-input{
-padding:12px 20px;
-border-radius:30px;
-border:none;
-margin-top:15px;
-}
-
-button{
-padding:10px 25px;
-border-radius:30px;
-border:none;
-background:#ff4d6d;
-color:white;
-margin-top:10px;
-cursor:pointer;
-}
-
-button:hover{
-opacity:0.8;
-}
-
-/* Ana İçerik */
-#mainContent{
-display:none;
-}
-
-.section{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:50px 20px;
-}
-
-h1{
-font-size:3rem;
-margin-bottom:20px;
-}
-
-.timeline{
-max-width:800px;
-margin:auto;
-}
-
-.card{
-background:#1f1f1f;
-padding:20px;
-margin:20px 0;
-border-radius:15px;
-box-shadow:0 0 15px rgba(255,77,109,0.3);
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-max-width:900px;
-margin:auto;
-}
-
-.gallery img{
-width:100%;
-border-radius:15px;
-transition:0.4s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-.music-card{
-background:#111;
-padding:25px;
-border-radius:20px;
-box-shadow:0 0 20px rgba(255,77,109,0.4);
-}
-
-.signature{
-margin-top:50px;
-opacity:0.6;
-}
-</style>
-</head>
-<body>
-
-<div id="passwordScreen">
-<h2>Bizim Hikayemiz İçin Şifre</h2>
-<input type="password" id="passwordInput" placeholder="Şifreyi gir">
-<button onclick="checkPassword()">Giriş</button>
-</div>
-
-<div id="mainContent">
-
-<div class="section">
-<h1>Hoşgeldin Balım 🤍</h1>
-<p>Bu sayfa sıradan değil. Bu sayfa biraz biz.</p>
-</div>
-
-<div class="section">
-<h1>Bizim Hikayemiz</h1>
-
+<!-- HİKAYEMİZ BÖLÜMÜ GÜNCELLENDİ -->
+<section>
+<h2>Hikayemiz 📖</h2>
 <div class="timeline">
 
+<div class="timeline-item">
+🎆 31 Aralık 2025 – Yılın En Güzel Mesajı
+</div>
+
+<div class="timeline-item">
+💬 İlk Uzun Sohbetimiz – Saatlerin nasıl geçtiğini anlamadığım gece
+</div>
+
+<div class="timeline-item">
+📱 Mesajını Beklediğim İlk An – Telefon ekranına sebepsiz bakmaya başladığım gün
+</div>
+
+<div class="timeline-item">
+😊 Adını Görünce Gülümsediğim An
+</div>
+
+<div class="timeline-item">
+💌 Sana Karşı Hissettiğimi Fark Ettiğim Gün
+</div>
+
+<div class="timeline-item">
+🌿 14 Şubat 2026 – Biz Olduğumuz Gün
+</div>
+
+<div class="timeline-item">
+🤎 İlk Kıskanışım – İçimde küçük ama gerçek bir kıpırtı
+</div>
+
+<div class="timeline-item">
+✨ İlk “İyi ki” Dediğim An
+</div>
+
+</div>
+</section>
+
+
+
+<!-- NEDEN SEN BÖLÜMÜ EKLENDİ -->
+<section>
+<h2>Neden Sen? 🤍</h2>
 <div class="card">
-<h3>31 Aralık 2025</h3>
-<p>Hayatıma sessizce giriş yaptığın gün.</p>
+• Gülüşün… gerçekten içimi ısıtıyor.<br><br>
+• Mesaj atış şeklin… sade ama samimi.<br><br>
+• Sakinliğin… bana huzur veriyor.<br><br>
+• Bana hissettirdiklerin… kendimi değerli hissettiriyorsun.<br><br>
+• Yanımdayken dünyayı biraz daha hafif yapman.
 </div>
+</section>
 
+
+
+<!-- SANA SÖYLEYEMEDİKLERİM EKLENDİ -->
+<section>
+<h2>Sana Söyleyemediklerim 🌙</h2>
 <div class="card">
-<h3>İlk Uzun Sohbetimiz</h3>
-<p>Konuşma bitmedi. Saatler geçti. O gece farklıydı.</p>
+Bazen sana her şeyi açık açık söylemek istiyorum ama kelimeler yetmiyor. 
+Yanındayken daha sakin, daha iyi bir versiyonum gibi hissediyorum. 
+Hayatıma gelişin planlı değildi belki ama doğruydu. 
+Bunu sana her zaman söyleyemem belki ama içimde gerçekten özel bir yerin var.
 </div>
-
-<div class="card">
-<h3>Mesajını Beklediğim İlk An</h3>
-<p>Telefon ekranına gereksiz yere baktığım gün.</p>
-</div>
-
-<div class="card">
-<h3>İlk Gerçek Gülüşüm</h3>
-<p>Adını görünce istemsizce gülümsediğim an.</p>
-</div>
-
-<div class="card">
-<h3>İlk Kıskanışım</h3>
-<p>Saçma ama gerçekti. İçimde küçük bir şey kıpırdadı.</p>
-</div>
-
-<div class="card">
-<h3>14 Şubat</h3>
-<p>Belki sıradan ama benim için değildi.</p>
-</div>
-
-<div class="card">
-<h3>İlk “İyi ki”</h3>
-<p>Hayatıma girdiğin için içimden teşekkür ettiğim an.</p>
-</div>
-
-</div>
-</div>
-
-<div class="section">
-<h1>Hayalimiz</h1>
-<div class="card">
-<p>Bir mutfakta beraber yemek yapmak.  
-Kahve kokusu.  
-Arada saçma şakalaşmalar.  
-“Tatlı olmuş mu?” diye sorman.  
-Benim bilerek tuzu fazla atmam.</p>
-</div>
-</div>
-
-<div class="section">
-<h1>Fotoğraflarımız</h1>
-<div class="gallery">
-<img src="https://picsum.photos/300/300?1">
-<img src="https://picsum.photos/300/300?2">
-<img src="https://picsum.photos/300/300?3">
-</div>
-</div>
-
-<div class="section">
-<h1>Şarkımız</h1>
-<div class="music-card">
-<p>Bu şarkıyı her duyduğumda aklıma sen geliyorsun.</p>
-<iframe style="border-radius:12px" 
-src="https://open.spotify.com/embed/track/4uLU6hMCjMI75M1A2tKUQC" 
-width="300" height="80" frameborder="0" allowfullscreen="" 
-allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-</iframe>
-</div>
-</div>
-
-<div class="section">
-<div class="signature">
-– Seninle yazılan bir hikaye 🤍
-</div>
-</div>
-
-</div>
-
-<script>
-function checkPassword(){
-var password=document.getElementById("passwordInput").value;
-if(password==="1013"){
-document.getElementById("passwordScreen").style.display="none";
-document.getElementById("mainContent").style.display="block";
-}else{
-alert("Yanlış şifre...");
-}
-}
-</script>
-
-</body>
-</html>
+</section>
