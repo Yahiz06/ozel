@@ -3,213 +3,219 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bizim Hikayemiz</title>
+<title>Biz</title>
 
 <style>
-body {
-    margin:0;
-    font-family:'Segoe UI', sans-serif;
-    background: linear-gradient(180deg, #0f0f0f, #1c1c1c);
-    color:white;
-    overflow-x:hidden;
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(180deg,#0f0f0f,#1a1a1a);
+color:white;
+overflow-x:hidden;
 }
 
 /* Şifre Ekranı */
-#passwordScreen {
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
+#passwordScreen{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
 }
 
-input {
-    padding:12px 20px;
-    border-radius:25px;
-    border:none;
-    margin-top:15px;
-    font-size:16px;
+input{
+padding:12px 20px;
+border-radius:30px;
+border:none;
+margin-top:15px;
 }
 
-button {
-    padding:10px 20px;
-    margin-top:10px;
-    border:none;
-    border-radius:25px;
-    background:#ff4d6d;
-    color:white;
-    cursor:pointer;
+button{
+padding:10px 25px;
+border-radius:30px;
+border:none;
+background:#ff4d6d;
+color:white;
+margin-top:10px;
+cursor:pointer;
 }
 
-button:hover {
-    opacity:0.8;
+button:hover{
+opacity:0.8;
 }
 
 /* Ana İçerik */
-#mainContent {
-    display:none;
+#mainContent{
+display:none;
 }
 
-.section {
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    text-align:center;
-    padding:40px;
+.section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:50px 20px;
 }
 
-.timeline {
-    position:relative;
-    max-width:800px;
-    margin:auto;
+h1{
+font-size:3rem;
+margin-bottom:20px;
 }
 
-.timeline::after {
-    content:'';
-    position:absolute;
-    width:4px;
-    background:#ff4d6d;
-    top:0;
-    bottom:0;
-    left:50%;
-    margin-left:-2px;
+.timeline{
+max-width:800px;
+margin:auto;
 }
 
-.event {
-    padding:20px 30px;
-    position:relative;
-    width:50%;
+.card{
+background:#1f1f1f;
+padding:20px;
+margin:20px 0;
+border-radius:15px;
+box-shadow:0 0 15px rgba(255,77,109,0.3);
 }
 
-.event.left { left:0; }
-.event.right { left:50%; }
-
-.event::before {
-    content:'';
-    position:absolute;
-    width:20px;
-    height:20px;
-    right:-10px;
-    background:#ff4d6d;
-    border-radius:50%;
-    top:25px;
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+max-width:900px;
+margin:auto;
 }
 
-.event.right::before {
-    left:-10px;
+.gallery img{
+width:100%;
+border-radius:15px;
+transition:0.4s;
 }
 
-.content {
-    background:#1f1f1f;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 0 15px rgba(255,77,109,0.3);
+.gallery img:hover{
+transform:scale(1.05);
 }
 
-.signature {
-    margin-top:50px;
-    opacity:0.6;
+.music-card{
+background:#111;
+padding:25px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(255,77,109,0.4);
 }
 
+.signature{
+margin-top:50px;
+opacity:0.6;
+}
 </style>
 </head>
 <body>
 
-<!-- Şifre Ekranı -->
 <div id="passwordScreen">
-    <h2>Şifreyi Gir</h2>
-    <input type="password" id="passwordInput" placeholder="Şifre">
-    <button onclick="checkPassword()">Giriş</button>
+<h2>Bizim Hikayemiz İçin Şifre</h2>
+<input type="password" id="passwordInput" placeholder="Şifreyi gir">
+<button onclick="checkPassword()">Giriş</button>
 </div>
 
-<!-- Ana Site -->
 <div id="mainContent">
 
 <div class="section">
-    <h1>Bizim Hikayemiz</h1>
-    <p>Her şey fark etmeden başladı…</p>
+<h1>Hoşgeldin Balım 🤍</h1>
+<p>Bu sayfa sıradan değil. Bu sayfa biraz biz.</p>
 </div>
 
 <div class="section">
-    <div class="timeline">
+<h1>Bizim Hikayemiz</h1>
 
-        <div class="event left">
-            <div class="content">
-                <h3>31 Aralık 2025</h3>
-                <p>Hayatıma sessizce giriş yaptığın gün.</p>
-            </div>
-        </div>
+<div class="timeline">
 
-        <div class="event right">
-            <div class="content">
-                <h3>İlk Uzun Sohbetimiz</h3>
-                <p>Konuşma bitmedi, saatler geçti. O gece bir şey değişti.</p>
-            </div>
-        </div>
+<div class="card">
+<h3>31 Aralık 2025</h3>
+<p>Hayatıma sessizce giriş yaptığın gün.</p>
+</div>
 
-        <div class="event left">
-            <div class="content">
-                <h3>Hissettiğimi Fark Ettiğim Gün</h3>
-                <p>Bunun sıradan bir hoşlanma olmadığını anladım.</p>
-            </div>
-        </div>
+<div class="card">
+<h3>İlk Uzun Sohbetimiz</h3>
+<p>Konuşma bitmedi. Saatler geçti. O gece farklıydı.</p>
+</div>
 
-        <div class="event right">
-            <div class="content">
-                <h3>Mesajını Beklediğim İlk An</h3>
-                <p>Telefon ekranına sebepsiz yere baktığım gün.</p>
-            </div>
-        </div>
+<div class="card">
+<h3>Mesajını Beklediğim İlk An</h3>
+<p>Telefon ekranına gereksiz yere baktığım gün.</p>
+</div>
 
-        <div class="event left">
-            <div class="content">
-                <h3>İlk Gerçek Gülüşüm</h3>
-                <p>Adını görünce istemsizce gülümsediğim an.</p>
-            </div>
-        </div>
+<div class="card">
+<h3>İlk Gerçek Gülüşüm</h3>
+<p>Adını görünce istemsizce gülümsediğim an.</p>
+</div>
 
-        <div class="event right">
-            <div class="content">
-                <h3>İlk Kıskanışım</h3>
-                <p>Saçma ama içimde küçük bir kıpırtı oldu.</p>
-            </div>
-        </div>
+<div class="card">
+<h3>İlk Kıskanışım</h3>
+<p>Saçma ama gerçekti. İçimde küçük bir şey kıpırdadı.</p>
+</div>
 
-        <div class="event left">
-            <div class="content">
-                <h3>14 Şubat</h3>
-                <p>Belki herkes için sıradan ama benim için değildi.</p>
-            </div>
-        </div>
+<div class="card">
+<h3>14 Şubat</h3>
+<p>Belki sıradan ama benim için değildi.</p>
+</div>
 
-        <div class="event right">
-            <div class="content">
-                <h3>İlk "İyi ki"</h3>
-                <p>Hayatıma girdiğin için içimden teşekkür ettiğim an.</p>
-            </div>
-        </div>
+<div class="card">
+<h3>İlk “İyi ki”</h3>
+<p>Hayatıma girdiğin için içimden teşekkür ettiğim an.</p>
+</div>
 
-    </div>
+</div>
+</div>
 
-    <div class="signature">
-        – Seninle yazılan bir hikaye
-    </div>
+<div class="section">
+<h1>Hayalimiz</h1>
+<div class="card">
+<p>Bir mutfakta beraber yemek yapmak.  
+Kahve kokusu.  
+Arada saçma şakalaşmalar.  
+“Tatlı olmuş mu?” diye sorman.  
+Benim bilerek tuzu fazla atmam.</p>
+</div>
+</div>
+
+<div class="section">
+<h1>Fotoğraflarımız</h1>
+<div class="gallery">
+<img src="https://picsum.photos/300/300?1">
+<img src="https://picsum.photos/300/300?2">
+<img src="https://picsum.photos/300/300?3">
+</div>
+</div>
+
+<div class="section">
+<h1>Şarkımız</h1>
+<div class="music-card">
+<p>Bu şarkıyı her duyduğumda aklıma sen geliyorsun.</p>
+<iframe style="border-radius:12px" 
+src="https://open.spotify.com/embed/track/4uLU6hMCjMI75M1A2tKUQC" 
+width="300" height="80" frameborder="0" allowfullscreen="" 
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
+</div>
+</div>
+
+<div class="section">
+<div class="signature">
+– Seninle yazılan bir hikaye 🤍
+</div>
 </div>
 
 </div>
 
 <script>
-function checkPassword() {
-    var password = document.getElementById("passwordInput").value;
-
-    if(password === "1907") {   // Şifreyi buradan değiştir
-        document.getElementById("passwordScreen").style.display = "none";
-        document.getElementById("mainContent").style.display = "block";
-    } else {
-        alert("Yanlış şifre...");
-    }
+function checkPassword(){
+var password=document.getElementById("passwordInput").value;
+if(password==="1013"){
+document.getElementById("passwordScreen").style.display="none";
+document.getElementById("mainContent").style.display="block";
+}else{
+alert("Yanlış şifre...");
+}
 }
 </script>
 
