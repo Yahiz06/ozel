@@ -3,272 +3,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Belinay 🌿</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Bizim Hikayemiz</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{
-background:linear-gradient(160deg,#0f1a14,#1c2b22,#2e2218);
-color:#f5f5f5;
-overflow-x:hidden;
+body {
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, #0f0f0f, #1c1c1c);
+    color:white;
+    overflow-x:hidden;
 }
-section{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:80px 20px;
-text-align:center;
-opacity:0;
-transform:translateY(40px);
-transition:1s ease;
+
+.section {
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:40px;
 }
-section.show{
-opacity:1;
-transform:translateY(0);
+
+h1 {
+    font-size:3rem;
+    margin-bottom:20px;
 }
-h1,h2{margin-bottom:20px;}
-button{
-padding:12px 28px;
-border:none;
-border-radius:30px;
-background:#3b2a1e;
-color:#f5f5f5;
-cursor:pointer;
-transition:.3s;
-margin-top:20px;
+
+.timeline {
+    position:relative;
+    max-width:800px;
+    margin:auto;
 }
-button:hover{background:#2f4f3b;}
-.card{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.1);
-backdrop-filter:blur(10px);
-padding:25px;
-border-radius:20px;
-margin:15px;
-max-width:650px;
+
+.timeline::after {
+    content:'';
+    position:absolute;
+    width:4px;
+    background:#ff4d6d;
+    top:0;
+    bottom:0;
+    left:50%;
+    margin-left:-2px;
 }
-.hidden{display:none;}
-input{
-padding:10px;
-border-radius:20px;
-border:none;
-text-align:center;
+
+.event {
+    padding:20px 30px;
+    position:relative;
+    width:50%;
 }
-#countdown{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-justify-content:center;
-margin-top:20px;
+
+.event.left {
+    left:0;
 }
-.time-box{
-background:#1f3326;
-padding:20px;
-border-radius:15px;
-width:100px;
+
+.event.right {
+    left:50%;
 }
-.timeline{
-max-width:700px;
-margin-top:30px;
-text-align:left;
+
+.event::before {
+    content:'';
+    position:absolute;
+    width:20px;
+    height:20px;
+    right:-10px;
+    background:#ff4d6d;
+    border-radius:50%;
+    top:25px;
+    z-index:1;
 }
-.timeline-item{
-background:#1f3326;
-padding:20px;
-border-left:4px solid #3b2a1e;
-border-radius:10px;
-margin:20px 0;
+
+.event.right::before {
+    left:-10px;
 }
-.gallery{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-justify-content:center;
+
+.content {
+    background:#1f1f1f;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(255,77,109,0.3);
 }
-.placeholder{
-width:200px;
-height:200px;
-border:2px dashed #3b2a1e;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:15px;
-color:#aaa;
-transition:.3s;
+
+.signature {
+    margin-top:50px;
+    font-size:1.2rem;
+    opacity:0.7;
 }
-.placeholder:hover{
-background:#1f3326;
-color:#fff;
-}
-.music-card{
-background:#1f3326;
-padding:25px;
-border-radius:20px;
-}
-footer{
-margin-top:40px;
-opacity:0.6;
-font-size:14px;
-}
-.glow{
-position:fixed;
-width:500px;
-height:500px;
-background:radial-gradient(circle,#2f4f3b 0%,transparent 70%);
-top:-200px;
-right:-200px;
-opacity:0.15;
-animation:move 15s infinite alternate ease-in-out;
-}
-@keyframes move{
-from{transform:translateX(0);}
-to{transform:translateX(100px);}
-}
-.loader{
-position:fixed;
-width:100%;
-height:100%;
-background:#0f1a14;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:22px;
-z-index:999;
-}
+
 </style>
 </head>
 <body>
 
-<div class="glow"></div>
-
-<div id="loader" class="loader hidden">Yükleniyor...</div>
-
-<section id="lock" class="show">
-<h1>🔐 Özel Alan</h1>
-<p>Kalbimin anahtarını gir</p>
-<input type="password" id="password" maxlength="4">
-<br>
-<button onclick="checkPassword()">Aç</button>
-</section>
-
-<div id="main" class="hidden">
-
-<section>
-<h1>Hoş Geldin Balım 🌿</h1>
-<div class="card">
-Bu site sana olan hislerimin sade ama gerçek bir yansıması.
-</div>
-</section>
-
-<section id="time">
-<h2>Seninle Geçen Zaman ⏳</h2>
-<div id="countdown">
-<div class="time-box"><h2 id="days">0</h2><p>Gün</p></div>
-<div class="time-box"><h2 id="hours">0</h2><p>Saat</p></div>
-<div class="time-box"><h2 id="minutes">0</h2><p>Dakika</p></div>
-<div class="time-box"><h2 id="seconds">0</h2><p>Saniye</p></div>
-</div>
-<p style="margin-top:20px;">Tanışma: 31 Aralık 2025<br>Biz Olduğumuz Gün: 14 Şubat 2026</p>
-</section>
-
-<section>
-<h2>Hikayemiz 📖</h2>
-<div class="timeline">
-<div class="timeline-item">🎆 31 Aralık 2025 – Yılın En Güzel Mesajı</div>
-<div class="timeline-item">🙂 İlk Gerçek Gülüşüm</div>
-<div class="timeline-item">📱 Mesajını Beklediğim İlk An</div>
-<div class="timeline-item">🌙 İlk Uzun Sohbetimiz</div>
-<div class="timeline-item">💌 Sana Karşı Hissettiğimi Fark Ettiğim Gün</div>
-<div class="timeline-item">🌿 14 Şubat 2026 – Biz Olduğumuz Gün</div>
-<div class="timeline-item">🤎 İlk Kıskanışım</div>
-<div class="timeline-item">🤍 İlk ‘İyi ki’ Dediğim An</div>
-</div>
-</section>
-
-<section>
-<h2>Sana Söyleyemediklerim 🤎</h2>
-<div class="card">
-Bazen sana yazamadığım şeyler var.  
-Çünkü kelimeler hislerimin yanında küçük kalıyor.
-</div>
-</section>
-
-<section>
-<h2>Neden Sen? 🌿</h2>
-<div class="card">
-• Gülüşün  
-• Mesaj atış şeklin  
-• Sakinliğin  
-• Bana hissettirdiklerin
-</div>
-</section>
-
-<section>
-<h2>Bir Gün Dolduracağız 📸</h2>
-<div class="gallery">
-<div class="placeholder">Birlikte Fotoğrafımız</div>
-<div class="placeholder">Aynı Kare</div>
-<div class="placeholder">Gerçek Bir Sarılma</div>
-</div>
-</section>
-
-<section>
-<h2>Gelecek Hayallerim 🌍</h2>
-<div class="card">
-Bir gün aynı evde sabah uyanmak…  
-Aynı mutfakta kahve yapmak…  
-Aynı koltukta film izlemek…  
-Gerçek bir sarılmanın sıcaklığını hissetmek.
-</div>
-</section>
-
-<section>
-<h2>🎵 Bizim Şarkımız</h2>
-<div class="music-card">
-<p>Duman - Bal</p>
-<a href="https://www.youtube.com/watch?v=1k3v8Y5sF1Y" target="_blank">
-<button>Dinle</button>
-</a>
-</div>
-</section>
-
-<section>
-<button onclick="showSurprise()">Buna Tıklama 🙃</button>
-<p id="surprise" class="hidden" style="margin-top:20px;">
-Seni düşündüğüm her an yüzümde istemsiz bir gülümseme oluyor.
-</p>
-<footer>Bu site 1013 koduyla sana özel yapıldı.</footer>
-</section>
-
+<div class="section">
+    <h1>Bizim Hikayemiz</h1>
+    <p>Her şey fark etmeden başladı…</p>
 </div>
 
-<script>
-function checkPassword(){
-if(document.getElementById("password").value==="1013"){
-document.getElementById("loader").classList.remove("hidden");
-setTimeout(()=>{
-document.getElementById("loader").classList.add("hidden");
-document.getElementById("lock").style.display="none";
-document.getElementById("main").classList.remove("hidden");
-document.querySelectorAll("#main section").forEach(sec=>sec.classList.add("show"));
-},1500);
-}else{alert("Yanlış şifre");}
-}
-const startDate=new Date("2025-12-31T00:00:00").getTime();
-setInterval(()=>{
-const now=new Date().getTime();
-const diff=now-startDate;
-document.getElementById("days").innerText=Math.floor(diff/(1000*60*60*24));
-document.getElementById("hours").innerText=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-document.getElementById("minutes").innerText=Math.floor((diff%(1000*60*60))/(1000*60));
-document.getElementById("seconds").innerText=Math.floor((diff%(1000*60))/1000);
-},1000);
-function showSurprise(){
-document.getElementById("surprise").classList.toggle("hidden");
-}
-</script>
+<div class="section">
+    <div class="timeline">
+
+        <div class="event left">
+            <div class="content">
+                <h3>31 Aralık 2025</h3>
+                <p>Hayatıma sessizce giriş yaptığın gün.</p>
+            </div>
+        </div>
+
+        <div class="event right">
+            <div class="content">
+                <h3>İlk Uzun Sohbetimiz</h3>
+                <p>Konuşma bitmedi, saatler geçti. O gece farklıydı.</p>
+            </div>
+        </div>
+
+        <div class="event left">
+            <div class="content">
+                <h3>Hissettiğimi Fark Ettiğim Gün</h3>
+                <p>Sadece hoşlanmadığımı, daha derin bir şey olduğunu anladım.</p>
+            </div>
+        </div>
+
+        <div class="event right">
+            <div class="content">
+                <h3>Mesajını Beklediğim İlk An</h3>
+                <p>Telefon ekranına gereksiz bakmaya başladığım gün.</p>
+            </div>
+        </div>
+
+        <div class="event left">
+            <div class="content">
+                <h3>İlk Gerçek Gülüşüm</h3>
+                <p>Adını görünce istemsiz gülümsediğimi fark ettiğim an.</p>
+            </div>
+        </div>
+
+        <div class="event right">
+            <div class="content">
+                <h3>İlk Kıskanışım</h3>
+                <p>Saçma ama gerçekti. İçimde bir şey hafifçe kıpırdadı.</p>
+            </div>
+        </div>
+
+        <div class="event left">
+            <div class="content">
+                <h3>14 Şubat</h3>
+                <p>Belki sıradan bir gün ama benim için anlamlıydı.</p>
+            </div>
+        </div>
+
+        <div class="event right">
+            <div class="content">
+                <h3>İlk "İyi ki"</h3>
+                <p>Hayatıma girdiğin için içimden şükrettiğim an.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="signature">
+        – Seninle yazılan bir hikaye
+    </div>
+</div>
 
 </body>
 </html>
